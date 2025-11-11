@@ -8,6 +8,7 @@
 <meta name="description" content="قوافل الأخيار لتنظيم الرحلات – رحلات فاخرة من الرياض إلى مكة والمدينة بنقل VIP وإقامة فندقية راقية وتنظيم متكامل يليق بثقتكم.">
 <meta name="keywords" content="قوافل الأخيار, تنظيم الرحلات, رحلات مكة, رحلات المدينة, نقل VIP, حافلات فاخرة, حجوزات فنادق, الرياض مكة, الرياض مكة المدينة">
 <meta name="author" content="قوافل الأخيار لتنظيم الرحلات">
+<meta name="robots" content="index,follow">
 <meta property="og:title" content="قوافل الأخيار لتنظيم الرحلات">
 <meta property="og:description" content="رحلات فاخرة من الرياض إلى مكة والمدينة بنقل مريح وإقامة راقية وتنظيم متكامل.">
 <meta property="og:image" content="images/hero1.webp">
@@ -64,8 +65,8 @@ h2.gradient{background:linear-gradient(90deg,var(--gold),#FFD96A);-webkit-backgr
   filter:drop-shadow(0 4px 10px rgba(0,0,0,.25));
 }
 @keyframes pulseLogo{
-  0%,100%{transform:scale(1);opacity:1;}
-  50%{transform:scale(1.05);opacity:.95;}
+  0%,100%{transform:scale(1);filter:drop-shadow(0 0 15px rgba(227,190,64,.0));}
+  50%{transform:scale(1.07);filter:drop-shadow(0 0 25px rgba(227,190,64,.6));}
 }
 .hero-box{
   background:rgba(255,255,255,.55);
@@ -188,54 +189,62 @@ footer .cr{color:#111;margin-top:.4rem;font-weight:700}
   </div>
 </section>
 
-<!-- ========== باقي الأقسام كما هي (من نحن، الخدمات، أثرنا، قالوا عنا، شركاء النجاح، نموذج الحجز، الفوتر) ========== -->
-<!-- لإيجاز الرد لم أكررها لأنك تمتلكها من النسخة السابقة وهي تعمل بدون تغيير -->
+<!-- ========== ABOUT ========== -->
+<section id="about" class="about section-white">
+  <h2 class="gradient reveal">من نحن</h2>
+  <p class="reveal">قوافل الأخيار لتنظيم الرحلات وجهتكم الأولى للرحلات الفاخرة من الرياض إلى مكة والمدينة. نقدّم نقلاً مريحًا وآمنًا بأسطول حديث، وإقامة فندقية راقية، وتنظيمًا دقيقًا يليق بثقتكم.</p>
+</section>
 
-<!-- WhatsApp Floating -->
-<a href="https://wa.me/966500280668" class="whatsapp" target="_blank" aria-label="WhatsApp">
-  <img src="images/social/whatsapp.svg" alt="WhatsApp">
-</a>
+<!-- ========== SERVICES ========== -->
+<section id="services" class="sec section-gray">
+  <h2 class="gradient reveal">خدماتنا</h2>
+  <p class="reveal" style="color:var(--muted);margin-bottom:1.2rem">نرافقكم بخدمات متكاملة في كل خطوة من رحلتكم</p>
+  <div class="cards">
+    <article class="card reveal"><img src="images/service1.jpg" alt="خدمة مكة"><div class="inner"><h3>رحلات الرياض - مكة - الرياض مع الإقامة</h3></div></article>
+    <article class="card reveal"><img src="images/service2.jpg" alt="خدمة مكة والمدينة"><div class="inner"><h3>رحلات الرياض - مكة - المدينة - الرياض مع الإقامة</h3></div></article>
+    <article class="card reveal"><img src="images/service3.jpg" alt="نقل VIP"><div class="inner"><h3>النقل السياحي وVIP</h3></div></article>
+    <article class="card reveal"><img src="images/service4.jpg" alt="تنسيق حجوزات"><div class="inner"><h3>تنسيق الحجوزات وإدارة الفعاليات</h3></div></article>
+  </div>
+</section>
 
-<script>
-/* تبديل صور الهيرو */
-const slides=[...document.querySelectorAll('.hero img.bg')];let si=0;
-setInterval(()=>{slides[si].classList.remove('active');si=(si+1)%slides.length;slides[si].classList.add('active');},5000);
+<!-- ========== IMPACT ========== -->
+<section id="impact" class="sec section-white">
+  <h2 class="gradient reveal">أثرنا</h2>
+  <div class="stats">
+    <div class="stat reveal"><span class="num" data-target="17650" data-prefix="+">0</span><p>عدد الرحلات المنفذة</p></div>
+    <div class="stat reveal"><span class="num" data-target="270000" data-prefix="+">0</span><p>عدد العملاء المستفيدين</p></div>
+    <div class="stat reveal"><span class="num" data-target="25">0</span><p>سنوات الخبرة</p></div>
+    <div class="stat reveal"><span class="num" data-target="91" data-suffix="%">0</span><p>نسبة رضا العملاء</p></div>
+  </div>
+</section>
 
-/* دخول العنوان */
-window.addEventListener('load',()=>document.getElementById('heroTitle').classList.add('entered'));
+<!-- ========== TESTIMONIALS ========== -->
+<section id="testimonials" class="sec section-gray">
+  <h2 class="gradient reveal">قالوا عنا</h2>
+  <div class="t-grid">
+    <article class="t-card"><div class="t-head"><div class="avatar">أ</div><div><strong>أبو محمد</strong><div class="stars">★★★★★</div></div></div><p>تنظيم راقٍ ومواعيد دقيقة وتجربة سفر فاخرة من البداية حتى النهاية.</p></article>
+    <article class="t-card"><div class="t-head"><div class="avatar">س</div><div><strong>سارة.م</strong><div class="stars">★★★★★</div></div></div><p>خدمة عملاء احترافية وخيارات فنادق ممتازة. أنصح بهم بشدة.</p></article>
+    <article class="t-card"><div class="t-head"><div class="avatar">ر</div><div><strong>شركة رواحل</strong><div class="stars">★★★★★</div></div></div><p>نقل VIP فعلاً وتجربة ضيافة فاخرة. شكراً لكم على رحلتنا المميزة.</p></article>
+  </div>
+</section>
 
-/* نصوص الهيرو */
-const lines=[
-  "رحلات فاخرة من الرياض إلى مكة والمدينة",
-  "نقل مريح وآمن بأسطول حديث",
-  "إقامة فندقية راقية وخدمات مميزة",
-  "تنظيم دقيق يليق بثقتكم",
-  "احجز الآن مع قوافل الأخيار"
-];
-const tw=document.getElementById('typewriter');let wi=0;
-const isMobile=window.matchMedia('(max-width: 768px)').matches;
-const fadeDelay=isMobile? 600: 220;
-const intervalTime=isMobile? 5200: 4200;
-function showNextLine(){tw.classList.remove('show');setTimeout(()=>{tw.textContent=lines[wi];tw.classList.add('show');wi=(wi+1)%lines.length;},fadeDelay);}
-showNextLine();setInterval(showNextLine,intervalTime);
+<!-- ========== PARTNERS ========== -->
+<section id="partners" class="partners section-white">
+  <div class="wrap">
+    <h2 class="gradient reveal">شركاء النجاح</h2>
+    <div class="marquee reveal">
+      <div class="track">
+        <div class="partner"><img src="images/partner-1.svg" alt="شريك 1"></div>
+        <div class="partner"><img src="images/partner-2.svg" alt="شريك 2"></div>
+        <div class="partner"><img src="images/partner-3.svg" alt="شريك 3"></div>
+        <div class="partner"><img src="images/partner-4.svg" alt="شريك 4"></div>
+        <div class="partner"><img src="images/partner-5.svg" alt="شريك 5"></div>
+        <div class="partner"><img src="images/partner-6.svg" alt="شريك 6"></div>
+        <div class="partner"><img src="images/partner-7.svg" alt="شريك 7"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* ظهور الأقسام */
-const revealEls=[...document.querySelectorAll('.reveal,.t-card')];
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.15});
-revealEls.forEach(el=>io.observe(el));
-
-/* عدادات الأثر */
-const nums=[...document.querySelectorAll('.num')];let counted=false;
-new IntersectionObserver(es=>{es.forEach(entry=>{if(entry.isIntersecting && !counted){counted=true;nums.forEach(el=>{const t=parseInt(el.dataset.target,10),pre=el.dataset.prefix||"",suf=el.dataset.suffix||"";const start=performance.now(),dur=1500;function step(ts){const p=Math.min((ts-start)/dur,1);el.textContent=pre+Math.floor(p*t).toLocaleString('en-US')+suf;if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step);});}});},{threshold:.35}).observe(document.querySelector('#impact'));
-
-/* نموذج الحجز */
-document.getElementById('bookForm')?.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.target);const msg=`طلب حجز جديد:
-الاسم: ${d.get('name')}
-التاريخ: ${d.get('date')}
-عدد الأشخاص: ${d.get('people')}
-الخدمة: ${d.get('service')}
-الناقل: ${d.get('transport')}
-الإقامة: ${d.get('accommodation')}`;window.open('https://wa.me/966500280668?text='+encodeURIComponent(msg),'_blank');});
-</script>
-</body>
-</html>
+<!-- ========== BOOKING ========== -->
+<section id="booking
