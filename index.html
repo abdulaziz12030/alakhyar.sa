@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 
 <title>قوافل الأخيار لتنظيم الرحلات</title>
-<meta name="description" content="قوافل الأخيار لتنظيم الرحلات – رحلات فاخرة من الرياض إلى مكة والمدينة بنقل VIP وإقامة فندقية راقية وتنظيم متكامل يليق بثقتكم.">
+<meta name="description" content="قوافل الأخيار لتنظيم الرحلات – رحلات فاخرة من الرياض إلى مكة والمدينة بنقل VIP وإقامة فندقية راقية وتنظيم دقيق يليق بثقتكم.">
 <meta name="keywords" content="قوافل الأخيار, تنظيم الرحلات, رحلات مكة, رحلات المدينة, نقل VIP, حافلات فاخرة, حجوزات فنادق, الرياض مكة, الرياض مكة المدينة">
 <meta name="author" content="قوافل الأخيار لتنظيم الرحلات">
 <meta name="robots" content="index,follow">
 <meta property="og:title" content="قوافل الأخيار لتنظيم الرحلات">
-<meta property="og:description" content="رحلات فاخرة من الرياض إلى مكة والمدينة بنقل مريح وإقامة راقية وتنظيم متكامل.">
+<meta property="og:description" content="رحلات فاخرة من الرياض إلى مكة والمدينة بنقل VIP وإقامة راقية وتنظيم متكامل.">
 <meta property="og:image" content="images/hero1.webp">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_SA">
@@ -18,185 +18,201 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* 🎨 ألوان الهوية */
 :root{
-  --blue:#363685;
-  --ink:#21261B;
-  --gray:#A1A1A1;
-  --gold:#E3BE40;
-  --white:#FFFFFF;
-  --page:#F5F6F8;
-  --muted:#6B7280;
-  --border:rgba(0,0,0,.08);
+  --bg:#0b1220;--fg:#e2e8f0;--muted:#cbd5e1;
+  --gold:#FEB211;--gold2:#FFD46B;--border:rgba(255,255,255,.12);
   --whatsapp:#25D366;
 }
-
-/* إعدادات عامة */
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{overflow-x:hidden;scroll-behavior:smooth}
-body{font-family:'Cairo',system-ui,sans-serif;background:var(--page);color:var(--ink);line-height:1.85}
+body{font-family:'Cairo',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.85}
 .container{max-width:1200px;margin:auto;padding:0 1rem}
-h2{font-size:clamp(22px,2.4vw,32px);text-align:center;margin-bottom:1rem;font-weight:800;color:var(--blue)}
-h2.gradient{background:linear-gradient(90deg,var(--gold),#FFD96A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h2{font-size:clamp(22px,2.4vw,32px);text-align:center;margin-bottom:1rem;font-weight:800}
+h2.gradient{background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 
-/* ========== HERO ========== */
+/* Header */
+header{position:sticky;top:0;z-index:30;background:rgba(0,0,0,.45);backdrop-filter:blur(10px)}
+.header-wrap{max-width:1200px;margin:auto;padding:.8rem 1rem;display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand img{width:48px;height:48px;border-radius:10px;border:1px solid var(--border)}
+.brand .title{font-weight:800;color:#fff}
+.brand small{display:block;color:var(--gold)}
+.nav{display:flex;gap:1rem}
+.nav a{color:#fff;text-decoration:none;padding:.4rem .8rem;border-radius:999px}
+.nav a:hover{background:rgba(255,255,255,.08)}
+@media(max-width:900px){.nav{display:none}}
+
+/* Hero */
 .hero{
-  position:relative;height:92vh;min-height:560px;
-  overflow:hidden;display:flex;align-items:center;justify-content:center;
-  background:var(--white);
+  position:relative;height:88vh;overflow:hidden;isolation:isolate;
+  display:flex;align-items:center;justify-content:center;
 }
 .hero img.bg{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  opacity:0;transition:opacity 1s ease;
+  opacity:0;transition:opacity 1.2s ease;transform:scale(1.1);
+  filter:brightness(1.15) contrast(1.08) saturate(1.05);
 }
-.hero img.bg.active{opacity:1;}
+.hero img.bg.active{opacity:1;animation:panZoom 10s ease-in-out forwards}
+@keyframes panZoom{
+  0%{transform:scale(1.1) translateY(0)}
+  50%{transform:scale(1.16) translateY(-6px)}
+  100%{transform:scale(1.12) translateY(0)}
+}
 .hero::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.1));
-  z-index:1;
-}
-.hero-content{
-  position:relative;z-index:2;text-align:center;
-  display:flex;flex-direction:column;align-items:center;gap:1rem;
-}
-.logo-pulse{
-  width:150px;height:auto;
-  animation:pulseLogo 3.5s ease-in-out infinite;
-  filter:drop-shadow(0 4px 10px rgba(0,0,0,.25));
-}
-@keyframes pulseLogo{
-  0%,100%{transform:scale(1);filter:drop-shadow(0 0 15px rgba(227,190,64,.0));}
-  50%{transform:scale(1.07);filter:drop-shadow(0 0 25px rgba(227,190,64,.6));}
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.55));z-index:1;
 }
 .hero-box{
-  background:rgba(255,255,255,.55);
-  backdrop-filter:blur(8px);
+  position:relative;z-index:2;text-align:center;padding:1.5rem 2rem;max-width:90%;
+  background:rgba(0,0,0,.4);
+  border:1px solid rgba(255,255,255,.15);
   border-radius:16px;
-  padding:1.2rem 2rem;
-  display:flex;flex-direction:column;align-items:center;gap:.6rem;
-  max-width:90%;
-  box-shadow:0 8px 26px rgba(0,0,0,.08);
+  backdrop-filter:blur(8px);
+  box-shadow:0 6px 26px rgba(0,0,0,.25);
 }
 .hero-title{
-  font-size:clamp(26px,3.2vw,42px);
-  font-weight:800;color:var(--blue);
-  text-shadow:0 3px 6px rgba(0,0,0,.15);
+  font-size:clamp(26px,3.2vw,40px);font-weight:800;color:#fff;
+  text-shadow:0 4px 12px rgba(0,0,0,.45);
+  margin-bottom:.2rem;opacity:0;transform:translateY(-8px);
+  transition:opacity .7s,transform .7s;
 }
+.hero-title.entered{opacity:1;transform:none}
 .hero-line{
-  font-size:clamp(15px,2vw,20px);
-  font-weight:700;color:var(--gold);
-  opacity:0;transition:opacity .5s ease;
+  font-size:clamp(15px,2vw,20px);font-weight:700;color:var(--gold);
+  min-height:30px;margin-top:.4rem;opacity:0;transition:opacity .55s ease;
+  text-shadow:0 2px 8px rgba(0,0,0,.3);
 }
-.hero-line.show{opacity:1;}
+.hero-line.show{opacity:1}
 .btn-primary{
-  margin-top:.5rem;padding:.9rem 1.6rem;border:none;border-radius:999px;
-  background:linear-gradient(90deg,var(--blue),#4f4fa6);
-  color:#fff;font-weight:800;cursor:pointer;transition:.25s;
-  box-shadow:0 10px 20px rgba(54,54,133,.18);
+  margin-top:.8rem;padding:.9rem 1.6rem;border:none;border-radius:999px;
+  background:linear-gradient(90deg,var(--gold2),var(--gold));color:#111;font-weight:800;cursor:pointer;transition:.25s;
+  box-shadow:0 10px 20px rgba(254,178,17,.35);
 }
-.btn-primary:hover{transform:translateY(-3px);}
-@media(max-width:900px){
-  .hero{height:auto;min-height:580px;padding:72px 0}
-  .logo-pulse{width:120px;}
-}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(254,178,17,.45)}
 
-/* الأقسام العامة */
+/* Sections */
 section.sec{max-width:1200px;margin:auto;padding:3rem 1rem;text-align:center}
-.section-white{background:var(--white)}
-.section-gray{background:#FAFAFB}
-.about{max-width:900px;margin:auto;padding:3rem 1rem;text-align:center}
-.about p{color:#333;font-size:1.08rem}
 
-/* الخدمات */
+/* About */
+.about{max-width:900px;margin:auto;padding:3rem 1rem;text-align:center}
+.about p{color:#e6e9f2;font-size:1.08rem}
+
+/* Services */
 .cards{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
-.card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,.08);border-color:rgba(227,190,64,.45)}
-.card img{width:100%;height:200px;object-fit:cover;transition:transform .35s,filter .35s}
-.card:hover img{transform:scale(1.05);filter:brightness(1.06)}
+.card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .35s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,.35);border-color:rgba(254,178,17,.35)}
+.card img{width:100%;height:200px;object-fit:cover;transition:transform .4s,filter .4s}
+.card:hover img{transform:scale(1.05);filter:brightness(1.12)}
 .card .inner{padding:1rem}
 
-/* أثرنا */
+/* Impact */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
-.stat{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1rem}
-.stat .num{background:linear-gradient(90deg,var(--gold),#FFD96A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:clamp(26px,3vw,40px);font-weight:800}
-.stat p{color:#555}
+.stat{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:14px;padding:1rem}
+.stat .num{
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  font-size:clamp(26px,3vw,40px);font-weight:800
+}
 
-/* قالوا عنا */
+/* Testimonials */
 .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1rem}
-.t-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1rem;text-align:right;opacity:0;transform:translateY(14px);transition:.6s}
+.t-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:14px;padding:1rem;text-align:right;opacity:0;transform:translateY(14px);transition:.6s}
 .t-card.in{opacity:1;transform:none}
 .t-head{display:flex;align-items:center;gap:.8rem;margin-bottom:.4rem}
-.avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(227,190,64,.18);color:var(--ink);font-weight:800}
+.avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(254,178,17,.12);color:var(--gold);font-weight:800}
 .stars{color:var(--gold);font-size:14px}
 
-/* شركاء النجاح */
-.partners{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+/* Partners */
+.partners{background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
 .wrap{max-width:1200px;margin:auto;padding:2rem 1rem}
 .marquee{overflow:hidden}
 .track{display:flex;gap:2rem;animation:scrollLTR 14s linear infinite;will-change:transform;padding-inline:1rem}
-.partner{flex:0 0 auto;width:160px;height:64px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border);border-radius:14px;padding:.6rem}
-.partner img{width:100%;height:100%;object-fit:contain;filter:brightness(1.02)}
+.partner{flex:0 0 auto;width:160px;height:64px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:.6rem}
+.partner img{width:100%;height:100%;object-fit:contain;filter:brightness(1.05)}
 .marquee:hover .track{animation-play-state:paused}
 @keyframes scrollLTR{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+@media(max-width:820px){.track{animation-duration:9s}}
 
-/* نموذج الحجز */
-.booking{background:#fff;border:1px solid var(--border);padding:1.3rem;border-radius:14px;max-width:700px;margin:2rem auto}
+/* Booking */
+.booking{background:rgba(255,255,255,.03);border:1px solid var(--border);padding:1.3rem;border-radius:14px;max-width:700px;margin:2rem auto}
 .booking form{display:grid;gap:.8rem;grid-template-columns:repeat(3,1fr)}
-.booking input,.booking select{background:#fff;border:1px solid var(--border);color:#111;padding:.85rem;border-radius:10px}
-.booking button{grid-column:1/-1;padding:.95rem;border:none;border-radius:10px;font-weight:800;cursor:pointer;background:linear-gradient(90deg,var(--blue),#4f4fa6);color:#fff}
+.booking input,.booking select{background:rgba(255,255,255,.06);border:1px solid var(--border);color:#fff;padding:.85rem;border-radius:10px}
+.booking button{grid-column:1/-1;padding:.9rem;border:none;border-radius:10px;font-weight:800;cursor:pointer;background:linear-gradient(90deg,var(--gold2),var(--gold));color:#111}
 @media(max-width:820px){.booking form{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.booking form{grid-template-columns:1fr}}
-@media(max-width:600px){.booking input,.booking select,.booking button{font-size:1rem;padding:1rem}}
 
-/* الفوتر */
-footer{padding:2rem 1rem;text-align:center;border-top:1px solid var(--border);color:#444;background:#fff}
+/* زيادة حجم الخطوط وتحسين التناسق في نموذج الحجز على الشاشات الصغيرة (الجوال) */
+@media(max-width:600px) {
+  .booking input,
+  .booking select,
+  .booking button {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Footer */
+footer{padding:2rem 1rem;text-align:center;border-top:1px solid rgba(255,255,255,.08);color:#cbd5e1}
 footer img{width:92px;height:auto;margin-top:.6rem}
-footer .cr{color:#111;margin-top:.4rem;font-weight:700}
+footer .cr{color:#fff;margin-top:.4rem}
 .social-row{display:flex;gap:.8rem;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
 .social-row img{width:40px;height:40px;display:block;transition:transform .25s}
 .social-row img:hover{transform:translateY(-3px)}
-.phones{display:grid;gap:.35rem;justify-content:center;margin:0 auto 1rem;width:fit-content}
-.phones a{display:flex;gap:.5rem;align-items:center;justify-content:flex-start;color:var(--ink);text-decoration:none;font-weight:800;padding:.4rem .8rem;border-radius:999px;border:1px solid var(--border)}
-.phones a:hover{background:#FAFAFB}
 
-/* زر واتساب */
-.whatsapp{position:fixed;left:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:var(--whatsapp);display:grid;place-items:center;z-index:60;box-shadow:0 10px 26px rgba(0,0,0,.25);animation:pulse 2.2s infinite}
+/* WhatsApp Floating */
+.whatsapp{position:fixed;left:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:var(--whatsapp);display:grid;place-items:center;z-index:60;box-shadow:0 10px 26px rgba(0,0,0,.35);animation:pulse 2.2s infinite}
 .whatsapp img{width:28px;height:28px}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
 
-/* الحركات العامة */
+/* Reveal */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
 </style>
 </head>
 <body>
 
-<!-- ========== HERO ========== -->
+<!-- Header -->
+<header>
+  <div class="header-wrap">
+    <div class="brand">
+      <img src="images/logo.png" alt="شعار قوافل الأخيار">
+      <div>
+        <div class="title">قوافل الأخيار لتنظيم الرحلات</div>
+        <small>رحلات فاخرة وتنقّلات راقية</small>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#about">من نحن</a>
+      <a href="#services">الخدمات</a>
+      <a href="#impact">أثرنا</a>
+      <a href="#testimonials">قالوا عنا</a>
+      <a href="#partners">شركاء النجاح</a>
+      <a href="#booking">نموذج طلب الحجز</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
 <section class="hero" aria-label="Hero">
   <img src="images/hero1.webp" class="bg active" alt="صورة بانورامية فاخرة">
   <img src="images/hero2.webp" class="bg" alt="">
   <img src="images/hero3.webp" class="bg" alt="">
   <img src="images/hero4.webp" class="bg" alt="">
   <img src="images/hero5.webp" class="bg" alt="">
-
-  <div class="hero-content">
-    <img src="images/logo-hero.png" class="logo-pulse" alt="شعار قوافل الأخيار">
-    <div class="hero-box">
-      <h1 class="hero-title" id="heroTitle">نأخذك إلى وجهتك بطمأنينة</h1>
-      <div id="typewriter" class="hero-line"></div>
-      <button class="btn-primary" onclick="document.querySelector('#booking').scrollIntoView({behavior:'smooth'})">احجز الآن</button>
-    </div>
+  <div class="hero-box">
+    <h1 class="hero-title" id="heroTitle">نأخذك إلى وجهتك بطمأنينة</h1>
+    <div id="typewriter" class="hero-line"></div>
+    <button class="btn-primary" onclick="document.querySelector('#booking').scrollIntoView({behavior:'smooth'})">احجز الآن</button>
   </div>
 </section>
 
-<!-- ========== ABOUT ========== -->
-<section id="about" class="about section-white">
+<!-- About -->
+<section id="about" class="about">
   <h2 class="gradient reveal">من نحن</h2>
   <p class="reveal">قوافل الأخيار لتنظيم الرحلات وجهتكم الأولى للرحلات الفاخرة من الرياض إلى مكة والمدينة. نقدّم نقلاً مريحًا وآمنًا بأسطول حديث، وإقامة فندقية راقية، وتنظيمًا دقيقًا يليق بثقتكم.</p>
 </section>
 
-<!-- ========== SERVICES ========== -->
-<section id="services" class="sec section-gray">
+<!-- Services -->
+<section id="services" class="sec">
   <h2 class="gradient reveal">خدماتنا</h2>
   <p class="reveal" style="color:var(--muted);margin-bottom:1.2rem">نرافقكم بخدمات متكاملة في كل خطوة من رحلتكم</p>
   <div class="cards">
@@ -207,8 +223,8 @@ footer .cr{color:#111;margin-top:.4rem;font-weight:700}
   </div>
 </section>
 
-<!-- ========== IMPACT ========== -->
-<section id="impact" class="sec section-white">
+<!-- Impact -->
+<section id="impact" class="sec">
   <h2 class="gradient reveal">أثرنا</h2>
   <div class="stats">
     <div class="stat reveal"><span class="num" data-target="17650" data-prefix="+">0</span><p>عدد الرحلات المنفذة</p></div>
@@ -218,8 +234,8 @@ footer .cr{color:#111;margin-top:.4rem;font-weight:700}
   </div>
 </section>
 
-<!-- ========== TESTIMONIALS ========== -->
-<section id="testimonials" class="sec section-gray">
+<!-- Testimonials -->
+<section id="testimonials" class="sec">
   <h2 class="gradient reveal">قالوا عنا</h2>
   <div class="t-grid">
     <article class="t-card"><div class="t-head"><div class="avatar">أ</div><div><strong>أبو محمد</strong><div class="stars">★★★★★</div></div></div><p>تنظيم راقٍ ومواعيد دقيقة وتجربة سفر فاخرة من البداية حتى النهاية.</p></article>
@@ -228,23 +244,5 @@ footer .cr{color:#111;margin-top:.4rem;font-weight:700}
   </div>
 </section>
 
-<!-- ========== PARTNERS ========== -->
-<section id="partners" class="partners section-white">
-  <div class="wrap">
-    <h2 class="gradient reveal">شركاء النجاح</h2>
-    <div class="marquee reveal">
-      <div class="track">
-        <div class="partner"><img src="images/partner-1.svg" alt="شريك 1"></div>
-        <div class="partner"><img src="images/partner-2.svg" alt="شريك 2"></div>
-        <div class="partner"><img src="images/partner-3.svg" alt="شريك 3"></div>
-        <div class="partner"><img src="images/partner-4.svg" alt="شريك 4"></div>
-        <div class="partner"><img src="images/partner-5.svg" alt="شريك 5"></div>
-        <div class="partner"><img src="images/partner-6.svg" alt="شريك 6"></div>
-        <div class="partner"><img src="images/partner-7.svg" alt="شريك 7"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== BOOKING ========== -->
-<section id="booking
+<!-- Partners -->
+<section id="partners" class="partners
