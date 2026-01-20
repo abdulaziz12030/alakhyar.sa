@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/cauzz",
+      "destination": "https://drive.google.com/file/d/1nFussn3MCPQ4MqboQAZ2C9hzrwUT13oh/view?usp=drivesdk",
+      "permanent": false
+    }
+  ]
+}
