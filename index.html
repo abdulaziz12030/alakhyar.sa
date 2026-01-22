@@ -61,6 +61,30 @@ h2.gradient{
   background:linear-gradient(90deg,var(--primary),var(--gold));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent
 }
+.btn-ramadan{
+  margin-top:.6rem;
+  padding:.65rem 1.6rem;
+  border-radius:999px;
+  font-weight:800;
+  font-size:clamp(14px,2vw,16px);
+  text-decoration:none;
+  color:var(--primary);
+  background:linear-gradient(135deg,#ffffffcc,#f5f6fa);
+  border:1px solid rgba(59,58,144,.25);
+  backdrop-filter:blur(8px);
+  box-shadow:0 10px 22px rgba(0,0,0,.12);
+  transition:all .25s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+}
+.btn-ramadan::before{content:"📅"}
+.btn-ramadan:hover{
+  transform:translateY(-3px);
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#111;
+  box-shadow:0 14px 28px rgba(224,179,36,.28);
+}
 
 /* Header */
 header{
@@ -314,6 +338,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div id="typewriter" class="hero-line"></div>
     </div>
 <button class="btn-primary" onclick="document.querySelector('#booking').scrollIntoView({behavior:'smooth'})">احجز الآن</button>
+<a href="https://alakhyar-sa.vercel.app/RAMADAN" class="btn-ramadan">
+  جدول رحلات رمضان
+</a>
 
 <a class="btn-ramadan" href="RAMADAN/" aria-label="الذهاب إلى صفحة جدول رحلات رمضان">
   جدول رحلات رمضان
