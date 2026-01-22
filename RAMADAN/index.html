@@ -8,28 +8,30 @@
   <link rel="icon" href="../favicon.ico">
   <style>
 :root{
-  /* لوحة الهوية (مقترحة من الصورة المرفقة) */
-  --primary:#3b3a90;      /* أزرق بنفسجي هادئ */
-  --forest:#1f271c;       /* أخضر داكن (للنصوص الثانوية لو لزم) */
-  --gray:#a9abad;         /* رمادي متوسط */
-  --gold:#E0B324;         /* ذهبي */
-  --gold2:#FFD46B;        /* ذهبي فاتح */
-  --white:#ffffff;
+  --navy:#0b1220;
+  --navy2:#0f1b2f;
+  --navy3:#12243f;
 
-  /* واجهة فاتحة */
-  --bg:#f6f7fb;           /* خلفية الموقع */
-  --card:#ffffff;         /* خلفيات البطاقات */
-  --text:#1d2125;         /* لون النص الرئيسي */
-  --muted:#5b6168;        /* نص ثانوي */
-  --border:rgba(0,0,0,.08);
-  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --gold:#E0B324;
+  --gold2:#FFD46B;
+
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.72);
+  --muted2:rgba(255,255,255,.55);
+
+  --card:rgba(255,255,255,.06);
+  --card2:rgba(255,255,255,.08);
+  --border:rgba(255,255,255,.12);
+  --shadow:0 18px 40px rgba(0,0,0,.35);
 
   --whatsapp:#25D366;
 }
 
+
+
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{overflow-x:hidden;scroll-behavior:smooth}
-body{font-family:'Cairo',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.9}
+body{font-family:'Cairo',system-ui,sans-serif;background:var(--navy);color:var(--text);line-height:1.9}
 .container{max-width:1200px;margin:auto;padding:0 1rem}
 h2{font-size:clamp(22px,2.4vw,32px);text-align:center;margin-bottom:1rem;font-weight:800;color:var(--primary)}
 h2.gradient{
@@ -243,6 +245,63 @@ footer img.mc{width:92px;height:auto;margin-top:.6rem}
 /* كشف عند التمرير */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
+
+/* Dark identity overrides + new Ramadan table cards */
+header{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.header-wrap{max-width:1200px;margin:auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:54px;height:54px;object-fit:contain;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35))}
+.brand .title{font-weight:900;color:var(--text)}
+.brand small{color:var(--muted);display:block;margin-top:-2px}
+.nav a{color:rgba(255,255,255,.76);text-decoration:none;padding:10px 12px;border-radius:999px;transition:.25s}
+.nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+.nav a.active{background:rgba(255,255,255,.08);color:var(--text);border:1px solid rgba(224,179,36,.22)}
+@media(max-width:920px){.nav{display:none}}
+
+.ram-hero{padding:64px 0 30px;background:
+  radial-gradient(1200px 420px at 20% 0%, rgba(224,179,36,.14), transparent 55%),
+  radial-gradient(900px 420px at 90% 10%, rgba(255,212,107,.10), transparent 55%),
+  linear-gradient(180deg, rgba(255,255,255,.03), transparent);
+}
+.section{padding:54px 0}
+.section-title{font-size:clamp(22px,3vw,34px);font-weight:900;color:transparent;background:linear-gradient(90deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text}
+.lead{color:var(--muted);margin-top:10px}
+
+.pill{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:12px 16px;border-radius:999px;text-decoration:none;
+  border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:var(--text);transition:.25s
+}
+.pill:hover{transform:translateY(-2px);background:rgba(255,255,255,.08);box-shadow:0 14px 26px rgba(0,0,0,.28)}
+.pill strong{color:var(--text)}
+.pill span{color:var(--muted)}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+@media(max-width:980px){.grid-3{grid-template-columns:1fr}}
+.media-card{background:var(--card);border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+.media-top{display:flex;align-items:center;justify-content:space-between;padding:14px 14px 10px}
+.media-badge{font-weight:900;color:#111;background:linear-gradient(90deg,var(--gold2),var(--gold));padding:8px 12px;border-radius:999px;font-size:13px}
+.media-zoom{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:var(--text);padding:8px 12px;border-radius:999px;cursor:pointer;transition:.2s}
+.media-zoom:hover{background:rgba(255,255,255,.1);transform:translateY(-1px)}
+.media-img{width:100%;height:290px;object-fit:cover;display:block}
+@media(max-width:520px){.media-img{height:240px}}
+.media-body{padding:14px 16px 16px}
+.media-body h3{margin:0 0 6px;font-size:18px;font-weight:900;color:var(--text)}
+.media-body p{margin:0;color:var(--muted);font-size:14px;line-height:1.9}
+
+.modal{position:fixed;inset:0;display:none;z-index:100}
+.modal[aria-hidden="false"]{display:block}
+.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.65)}
+.modal-panel{position:relative;max-width:min(1100px,92vw);max-height:86vh;margin:6vh auto 0;background:rgba(15,27,47,.92);
+  border:1px solid rgba(255,255,255,.14);border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)
+}
+.modal-panel img{width:100%;height:auto;display:block;max-height:86vh;object-fit:contain;background:#0b1220}
+.modal-close{position:absolute;top:10px;left:10px;width:42px;height:42px;border-radius:999px;border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.06);color:var(--text);font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center
+}
+.modal-close:hover{background:rgba(255,255,255,.1)}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease, transform .7s ease}
+.reveal.show,.reveal.in{opacity:1;transform:none}
+
 </style>
   <style>
     /* Page-specific tweaks */
@@ -551,18 +610,45 @@ footer img.mc{width:92px;height:auto;margin-top:.6rem}
           تصفّح جدول الرحلات بالتفصيل (يمكن التكبير/التمرير بسلاسة).
         </p>
 
-        <div class="table-wrap reveal" style="transition-delay:.08s;">
-          <div class="table-slider">
-            <img id="ramSlide" src="../images/ramadan/ramadan-page-2.webp" alt="جدول رحلات رمضان - الصفحة 1">
-          </div>
-          <div class="slider-controls">
-            <button class="btn-ghost" type="button" id="prevSlide">السابق</button>
-            <button class="btn-ghost" type="button" id="nextSlide">التالي</button>
-          </div>
-          <p style="margin:10px 0 0; color: rgba(255,255,255,.72); font-size: 13px; line-height: 1.9;">
-            يمكنك أيضًا تحميل الملف الكامل بصيغة PDF عبر زر التحميل في أعلى الصفحة.
-          </p>
+        
+        <div class="grid-3 reveal" style="transition-delay:.08s;">
+          <article class="media-card" data-img="../images/ramadan/ramadan-page-2.webp">
+            <div class="media-top">
+              <div class="media-badge">السياحي 1</div>
+              <button class="media-zoom" type="button" aria-label="تكبير الجدول">تكبير</button>
+            </div>
+            <img class="media-img" src="../images/ramadan/ramadan-page-2.webp" alt="جدول الحافلات السياحية - الجزء الأول" loading="lazy">
+            <div class="media-body">
+              <h3>جدول الحافلات السياحية (1–54)</h3>
+              <p>عرض سريع للجدول الرسمي — اضغط تكبير لقراءة التفاصيل بوضوح.</p>
+            </div>
+          </article>
+
+          <article class="media-card" data-img="../images/ramadan/ramadan-page-3.webp">
+            <div class="media-top">
+              <div class="media-badge">السياحي 2</div>
+              <button class="media-zoom" type="button" aria-label="تكبير الجدول">تكبير</button>
+            </div>
+            <img class="media-img" src="../images/ramadan/ramadan-page-3.webp" alt="جدول الحافلات السياحية - الجزء الثاني" loading="lazy">
+            <div class="media-body">
+              <h3>جدول الحافلات السياحية (55–108)</h3>
+              <p>تصميم واضح ومتناسق مع الهوية — مناسب للجوال والتابلت.</p>
+            </div>
+          </article>
+
+          <article class="media-card" data-img="../images/ramadan/ramadan-page-4.webp">
+            <div class="media-top">
+              <div class="media-badge">السياحي 3</div>
+              <button class="media-zoom" type="button" aria-label="تكبير الجدول">تكبير</button>
+            </div>
+            <img class="media-img" src="../images/ramadan/ramadan-page-4.webp" alt="جدول الحافلات السياحية - الجزء الثالث" loading="lazy">
+            <div class="media-body">
+              <h3>جدول الحافلات السياحية (109–144)</h3>
+              <p>نقّل بين الأجزاء بسهولة — أو حمّل PDF من أعلى الصفحة.</p>
+            </div>
+          </article>
         </div>
+
       </div>
     </section>
 
@@ -577,6 +663,16 @@ footer img.mc{width:92px;height:auto;margin-top:.6rem}
       </div>
     </section>
   </main>
+
+  <!-- Image modal -->
+  <div class="modal" id="imgModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="1"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="عرض الجدول">
+      <button class="modal-close" type="button" data-close="1" aria-label="إغلاق">×</button>
+      <img id="modalImg" src="" alt="عرض الجدول" />
+    </div>
+  </div>
+
 
   <!-- Footer (same identity) -->
   <footer class="footer">
@@ -673,6 +769,27 @@ footer img.mc{width:92px;height:auto;margin-top:.6rem}
       si = (si + 1) % slides.length;
       showSlide(si);
     });
+    // Image modal for schedule cards
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
+    function openModal(src){
+      modalImg.src = src;
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
+    function closeModal(){
+      modal.setAttribute('aria-hidden','true');
+      modalImg.src='';
+      document.body.style.overflow='';
+    }
+    document.querySelectorAll('.media-card').forEach(card=>{
+      const src = card.getAttribute('data-img');
+      card.querySelector('.media-zoom')?.addEventListener('click', (e)=>{ e.stopPropagation(); openModal(src); });
+      card.addEventListener('click', ()=> openModal(src));
+    });
+    modal.addEventListener('click',(e)=>{ if(e.target?.dataset?.close) closeModal(); });
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && modal.getAttribute('aria-hidden')==='false') closeModal(); });
+
   </script>
 </body>
 </html>
