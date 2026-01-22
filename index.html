@@ -143,12 +143,26 @@ header{
   backdrop-filter: blur(10px);
   transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
   position:relative;overflow:hidden;
+.btn-secondary{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:.85rem 1.4rem;border-radius:999px;text-decoration:none;
+  border:1px solid rgba(224,179,36,.55);
+
+  /* ✅ النص أسود */
+  color:#111;
+  font-weight:900;
+
+  /* ✅ خلفية فاتحة مناسبة للهيرو */
+  background:rgba(255,255,255,.70);
+  backdrop-filter: blur(10px);
+
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  position:relative;overflow:hidden;
 }
-.btn-secondary:before{
-  content:"";position:absolute;inset:-2px;
-  background:linear-gradient(120deg,transparent 0%,rgba(224,179,36,.18) 40%,transparent 70%);
-  transform:translateX(-120%);
-  animation:ramShine 3.8s ease-in-out infinite;
+.btn-secondary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 24px rgba(224,179,36,.14);
+  background:rgba(255,255,255,.82);
 }
 @keyframes ramShine{0%,35%{transform:translateX(-120%)}65%,100%{transform:translateX(120%)}}
 .btn-secondary:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(224,179,36,.14);background:rgba(255,255,255,.08)}
